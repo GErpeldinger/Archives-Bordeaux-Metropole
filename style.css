@@ -1,0 +1,19 @@
+html {
+   box-sizing: border-box;
+   margin-top: 0;
+}
+
+*, *:before, *:after {
+   box-sizing: inherit;
+}
+
+:root {
+   --Primary: blue;
+   --Secondary: white;
+}
+
+/* HEADER */
+
+/* ASIDE */
+
+/* FOOTER */
