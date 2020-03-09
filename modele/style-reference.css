@@ -14,7 +14,7 @@ body {
 
 :root {
    --Primary: #FEF7E7;
-   --Secondary: rgba(111, 28, 54, 0.514);
+   --Secondary: rgba(111, 28, 54, 0.5);
 }
 
 header, section, aside, footer {
