@@ -24,7 +24,6 @@ body {
    flex-wrap: wrap;
    background: var(--Secondary);
    border-bottom: 1px solid black;
-   border-right: 1px solid black;
 }
 
 #topbar div, #topbar ul {
@@ -78,6 +77,7 @@ body {
 @media only screen and (min-width:731px) {
    #topbar {
       background: linear-gradient(90deg, var(--Primary) 0%, var(--Primary) 45%, var(--Secondary) 45%, var(--Secondary) 100%);
+      border-right: 1px solid black;
    }
    #topbar div {
       width: 45%;
@@ -85,10 +85,17 @@ body {
    #topbar img {
       width: 70px;
       height: 70px;
+      transition: 0.5s;
+   }
+   #topbar a:hover img {
+      transform: rotate(90deg) translateX(5px);
    }
    #topbar ul {
       width: 55%;
       justify-content: space-between;
+   }
+   #topbar li:last-child {
+      padding-right: 50px;
    }
    #topbar ul::before {
       content: '';
@@ -99,12 +106,15 @@ body {
    main {
       display: flex;
       height: calc( 100% - 80px - 0px);
+      background: var(--Primary);
+      border-right: solid 1px black;
    }
    section {
       width: 70%;
    }
    aside {
       width: 30%;
+      border-left: solid 1px black;
    }
 }
 
