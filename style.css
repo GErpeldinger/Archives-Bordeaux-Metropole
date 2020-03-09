@@ -33,3 +33,16 @@ aside {
 }
 
 /* FOOTER */
+
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 1024px){
+   /* IPAD PRO */
+
+}
+
+@media only screen and (max-width: 375px){
+   /* IPHONE X */
+
+}
