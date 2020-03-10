@@ -106,9 +106,9 @@ aside {
    flex-wrap: wrap;
 }
 
-/* .p_stop{
-   border: 1px solid black;
-} */
+aside div hr{
+   margin: 2.5vh 0;
+}
 
 .title_actu, .title_rdv{
    display: flex;
@@ -117,7 +117,7 @@ aside {
    font-size: 12px;
    font-style: italic;
    color:  var(--Primary);
-   background-color:#16569d;
+   background-color: var(--Secondary);
    margin: 5px;
    padding: 10px 0;
    flex-direction: column;
@@ -154,8 +154,11 @@ aside .title_rdv{
    margin-top: 10px;
 }
 
+a.a_rdv{
+   margin-left: auto;
+}
 .p_rdv{
-   align-content:right ;
+   text-align:right ;
 }
 /* MAIN PRESENTATION */
 
