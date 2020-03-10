@@ -32,17 +32,22 @@ aside {
    width: 30%;
 }
 
+p{
+   border: solid 1px;
+   padding: 5px;
+}
+
 /* FOOTER */
 
 
 /* RESPONSIVE */
 
-@media only screen and (max-width: 1024px){
+@media only screen and (min-width: 1024px){
    /* IPAD PRO */
 
 }
 
-@media only screen and (max-width: 375px){
+@media only screen and (min-width: 375px){
    /* IPHONE X */
 
 }
