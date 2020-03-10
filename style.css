@@ -40,7 +40,7 @@ body {
    display: flex;
    align-items: center;
    height: 40px;
-   padding: 0 20px;
+   padding: 0 25px;
    color: var(--Primary);
    text-decoration: none;
 }
@@ -52,6 +52,7 @@ body {
 
 #topbar div a:first-child {
    margin: 0 auto;
+
    color: black;
    transition: 0.3s;
 }
@@ -85,7 +86,25 @@ section {
 
 aside {
    height: 30%;
+} 
+aside {
+   display: flex;
+   flex-direction: column;
+   align-content: center; 
+   align-self: flex-start;
+   color: blue; 
+   height: auto;
 }
+aside div {
+   border: solid ;
+}
+.title_article, .title_rdv {
+color: rgba(111, 28, 54, 0.5);
+
+
+}
+
+
 
 /* FOOTER */
 
@@ -134,11 +153,9 @@ footer {
       width: 70%;
       height: auto;
    }
-   aside {
-      width: 30%;
-      height: auto;
-      border-left: solid 1px black;
-   }
+
+   /* ASIDE */
+   
 }
 
 @media only screen and (min-width:1024px) {
