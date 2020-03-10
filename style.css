@@ -104,15 +104,35 @@ main {
 aside {
    display: flex;
    flex-wrap: wrap;
+   justify-content: center
 }
 
-aside div hr{
-   margin: 2.5vh 0;
+
+
+
+.aside_content{
+   font-size: 12px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   padding: 5px;
+   /* border: solid 1px black; */
+}
+
+.aside_content p{
+   display: flex;
+   justify-content: flex-start;
+}
+.aside_content a{
+   /* display: flex; */
+   /* justify-content: flex-start; */
+   margin-top: 10px;
+   /* flex-wrap: wrap; */
 }
 
 .title_actu, .title_rdv{
    display: flex;
-   width: 40vw;
+   width: 90vw;
    height: 3vh;
    font-size: 12px;
    font-style: italic;
@@ -123,43 +143,39 @@ aside div hr{
    flex-direction: column;
    justify-content: center;
    align-content: center;
-}
-
-.title_rdv{
-   padding-right: 10px;
-   align-items: flex-end;
+   box-shadow: 50px 50px 20% black;
 }
 
 .title_actu{
    padding-left: 10px;
+   background: linear-gradient( to right,var(--Secondary),var(--Primary));
 }
 
-aside .title_rdv{
+aside div hr{
+   margin: 2.5vh 0;
+}
+
+.title_rdv{
    margin-left: auto;
+   padding-right: 10px;
+   align-items: flex-end;
+   background: linear-gradient( to right,var(--Primary),var(--Secondary));
 }
 
-.aside_content{
-   font-size: 12px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   padding: 5px;
-   /* width: 50vw; */
-   /* border: solid 1px black; */
+.p_act{
+   flex-direction: column;
 }
 
-.aside_content a{
-   display: flex;
-   justify-content: flex-end;
-   margin-top: 10px;
-}
-
-a.a_rdv{
+.a_rdv{
    margin-left: auto;
+   /* border: solid; */
 }
 .p_rdv{
-   text-align:right ;
+   text-align: right;
+   align-items: flex-end;
+   flex-direction: column;
 }
+
 /* MAIN PRESENTATION */
 
 #main-presentation article {
