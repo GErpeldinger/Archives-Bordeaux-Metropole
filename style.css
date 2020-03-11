@@ -89,6 +89,7 @@ main {
    height: auto;
    padding: 20px 20px;
    width: 100%;
+   font-size: 12px;
 }
 
 /* ASIDE */
@@ -98,6 +99,78 @@ main {
    width: 100%;
    padding: 20px 20px;
    border-bottom: 1px solid black;
+}
+
+aside {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center
+}
+
+.aside_content{
+   font-size: 12px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   padding: 5px;
+   border: solid 1px black;
+}
+
+.aside_content p{
+   display: flex;
+   justify-content: flex-start;
+}
+.aside_content a{
+   /* display: flex; */
+   /* justify-content: flex-start; */
+   margin-top: 10px;
+   /* flex-wrap: wrap; */
+}
+
+.title_actu, .title_rdv{
+   display: flex;
+   width: 90vw;
+   height: 3vh;
+   font-size: 12px;
+   font-style: italic;
+   color:  var(--Primary);
+   background-color: var(--Secondary);
+   margin: 5px;
+   padding: 10px 0;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+   box-shadow: 50px 50px 20% black;
+}
+
+.title_actu{
+   padding-left: 10px;
+   background: linear-gradient( to right,var(--Secondary),var(--Primary));
+}
+
+aside div hr{
+   margin: 2.5vh 0;
+}
+
+.title_rdv{
+   margin-left: auto;
+   padding-right: 10px;
+   align-items: flex-end;
+   background: linear-gradient( to right,var(--Primary),var(--Secondary));
+}
+
+.p_act{
+   flex-direction: column;
+}
+
+.a_rdv{
+   /* margin-left: auto; */
+   /* border: solid; */
+}
+.p_rdv{
+   /* text-align: right; */
+   align-items: flex-end;
+   /* flex-direction: column; */
 }
 
 /* MAIN PRESENTATION */
@@ -273,11 +346,45 @@ footer img {
       width: 70%;
       height: auto;
    }
+
+   /* MAIN ASIDE */
+
    #main-index aside {
       width: 30%;
       height: auto;
       border-left: solid 1px black;
       border-bottom: 0;
+   }
+   
+   .aside_content{
+      border: unset;
+   }
+   .p_stop{
+      width: 100% ;
+      align-content: center;
+   }
+   
+   .title_actu, .title_rdv{
+      flex-direction: row;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      width: auto;
+      padding: 0;
+      margin: 10 auto;
+      background: var(--Secondary);
+   }
+
+   .p_act, .p_rdv{
+      margin-bottom: 5vh;
+      text-align: justify;
+   }
+
+   .a_actu, .a_rdv{
+      margin: auto;
+   }
+   hr{
+      display: none;
    }
    /* MAIN PRESENTATION */
    #main-presentation {
