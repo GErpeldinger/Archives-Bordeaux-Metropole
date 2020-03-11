@@ -155,12 +155,8 @@ section div h1 {
 }
 section div p {
    display: flex;
-   flex-direction: column;
-   align-content: center;
-   align-items: center;
    justify-content: space-evenly;
    margin-top: 30px;
-   font-style: unset;
 }
 
 form input, form textarea, select {
@@ -310,7 +306,7 @@ footer img {
       flex-direction: row;
       height: 300px;
    }
-section div{
+   section div{
    height: 100%;
    display: flex;
    flex-direction: column;
