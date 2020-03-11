@@ -228,6 +228,10 @@ aside div hr{
    background-color: #88888888;
 }
 
+.gallery h3{
+   font-size: initial;
+   margin-bottom: 10px;
+}
 .gimpF{
    /* margin-top: -20vh; */
    /* min-width: 55%; */
