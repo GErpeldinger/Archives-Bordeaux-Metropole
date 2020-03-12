@@ -4,7 +4,9 @@ html {
    margin-top: 0;
    height: 100vh;
    font-family: 'Roboto', sans-serif;
-   background: var(--Primary);
+   background-image: url(images/fond.jpg);
+   background-attachment: fixed;
+   background-size: cover;
 }
 
 body {
@@ -17,7 +19,13 @@ body {
    --Secondary: rgba(111, 28, 54, 0.5);
 }
 
+#logo {
+   display: none;
+}
+
 /* HEADER */
+
+/* BARRE DE NAVIGATION */
 
 #topbar {
    height: 80px;
@@ -68,12 +76,23 @@ body {
    padding-right: 10px;
 }
 
+/* CAROUSEL */
+
+#carousel {
+   display: none;
+}
+
 /* MAIN */
 
 main {
    min-height: calc(100vh - 80px - 100px);
    background: var(--Primary);
-   height: 0px;
+}
+
+br {
+   display: block;
+   content: "";
+   margin-top: 10px;
 }
 
 /* MAIN INDEX */
@@ -100,41 +119,22 @@ main {
    width: 100%;
    padding: 20px 20px;
    border-bottom: 1px solid black;
-}
-
-aside {
    display: flex;
    flex-wrap: wrap;
    justify-content: center
 }
 
-.aside_content{
-   font-size: 12px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-evenly;
-   padding: 5px;
-   border: solid 1px black;
+.aside-container hr {
+   margin: 2.5vh 0;
 }
 
-.aside_content p{
-   display: flex;
-   justify-content: flex-start;
-}
-.aside_content a{
-   /* display: flex; */
-   /* justify-content: flex-start; */
-   margin-top: 10px;
-   /* flex-wrap: wrap; */
-}
-
-.title_actu, .title_rdv{
+.aside-title {
    display: flex;
    width: 90vw;
    height: 3vh;
    font-size: 12px;
    font-style: italic;
-   color:  var(--Primary);
+   color: var(--Primary);
    background-color: var(--Secondary);
    margin: 5px;
    padding: 10px 0;
@@ -144,34 +144,33 @@ aside {
    box-shadow: 50px 50px 20% black;
 }
 
-.title_actu{
+.aside-content {
+   font-size: 12px;
+   padding: 5px;
+}
+
+.actu {
    padding-left: 10px;
-   background: linear-gradient( to right,var(--Secondary),var(--Primary));
+   background: linear-gradient( to right, var(--Secondary), var(--Primary));
 }
 
-aside div hr{
-   margin: 2.5vh 0;
-}
-
-.title_rdv{
+.rdv {
    margin-left: auto;
    padding-right: 10px;
    align-items: flex-end;
-   background: linear-gradient( to right,var(--Primary),var(--Secondary));
+   background: linear-gradient( to right, var(--Primary), var(--Secondary));
 }
 
-.p_act{
+.actu-content {
    flex-direction: column;
 }
 
-.a_rdv{
-   /* margin-left: auto; */
-   /* border: solid; */
+.rdv-content {
+   text-align: right;
 }
-.p_rdv{
-   /* text-align: right; */
-   align-items: flex-end;
-   /* flex-direction: column; */
+
+.no-mobile {
+   display: none;
 }
 
 /* MAIN PRESENTATION */
@@ -204,6 +203,7 @@ aside div hr{
    border: none;
    border-top: 3px double rgb(0, 0, 0);
 }
+
 /* MAIN GALLERY */
 
 .gallery {
@@ -213,86 +213,94 @@ aside div hr{
    width: 100%;
    flex-wrap: wrap;
    padding-top: 10vh;
-   /* padding-bottom: 0px; */
    height: 70vh;
    margin: 0 auto;
-   /* border: solid; */
 }
 
-.gal_img{
-   /* padding: 1vw; */
-   /* border: solid 1px black; */
+.gal_img {
    width: auto;
    height: 6vh;
    margin: 2px;
    background-color: #88888888;
 }
 
-.gallery h3{
+.gallery h3 {
    font-size: initial;
    margin-bottom: 10px;
    margin-left: auto;
    margin-right: auto;
 }
-.gimpF{
-   /* margin-top: -20vh; */
-   /* min-width: 55%; */
+
+.gimpF {
    height: 50%;
-   /* border: solid; */
 }
 
-.gallery article{
+.gallery article {
    text-align: center;
    display: flex;
    flex-wrap: wrap;
    font-size: 12px;
    margin-top: 10px;
    width: 80vw;
-} 
+}
+
 /* MAIN CONTACT */
 
-section {
+#main-contact section {
    display: flex;
    flex-direction: column;
 }
 
-section div {
+#main-contact section div {
    width: 100%;
-   height: 200px;
-   border: black 1px solid;
+   height: 300px;
+   /* border: black 1px solid; Les bordures posaient problème car surperposition de plusieurs ajout de border bottom */
+   border-bottom: 1px solid black;
 }
 
-section div h1 {
-   text-align: center;
-   margin-top: 20px;
-   font-size: 2,5em;
-}
-.contactbas{
+#main-contact h2 {
    text-align: center;
    margin-top: 30px;
+   font-size: 1.6em;
+   /* Erreur de frappe 2, 5em */
 }
-section div p {
+
+/* .contact-bottom {
+   text-align: center;
+   margin-top: 30px;
+   inutile déjà fais juste au dessus
+} */
+
+#main-contact section div p {
    display: flex;
    justify-content: space-evenly;
    margin-top: 30px;
 }
 
-form input, form textarea, select {
+input, textarea, select {
    display: flex;
    flex-direction: column;
-   align-content: center;
-   align-items: center;
    margin: 5px auto;
-   width: 70%;
-   height: 1%;
+   width: 90%;
+   /*  Agrandissement des champs sur portable trop petit */
+   height: 20px;
+   /* il vaut mieux une hauteur fixe pour les champs */
 }
-input.send{
-   width: 45px;
+
+textarea {
+   height: 50px;
 }
-iframe{
-   width: 100%;
+
+.send {
+   width: 55px;
+   /* Agrandis de 10px car envoyé ne rentrais pas en entier */
+}
+
+iframe {
+   width: 99.9%;
    height: 100%;
 }
+
 /* FOOTER */
 
 footer {
@@ -326,22 +334,22 @@ footer img {
    text-align: center;
 }
 
-.footer-gauche, .footer-milieu {
+.footer-left, .footer-middle {
    height: 100px;
    display: flex;
    flex-direction: column;
    justify-content: space-evenly;
 }
 
-.footer-gauche {
+.footer-left {
    width: 40%;
 }
 
-.footer-milieu {
+.footer-middle {
    width: 45%;
 }
 
-.footer-droite {
+.footer-right {
    display: flex;
    flex-direction: column;
    width: 20%;
@@ -353,7 +361,7 @@ footer img {
 }
 
 @media only screen and (min-width:731px) {
-   /* HEADER */
+   /* BARRE DE NAVIGATION */
    #topbar {
       background: linear-gradient(90deg, var(--Primary) 0%, var(--Primary) 45%, var(--Secondary) 45%, var(--Secondary) 100%);
       border-right: 1px solid black;
@@ -382,34 +390,103 @@ footer img {
       border-right: solid 40px transparent;
       border-bottom: solid 80px var(--Primary);
    }
+   /* CAROUSEL */
+   #carousel {
+      display: block;
+      max-width: 1024px;
+      height: 250px;
+      position: relative;
+      margin: auto;
+   }
+   .slide {
+      display: none;
+   }
+   .slide img {
+      width: 100%;
+      height: 250px;
+      border-right: 1px solid black;
+   }
+   .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      color: var(--Primary);
+      background-color: var(--Secondary);
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+   }
+   .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+   }
+   .prev:hover, .next:hover {
+      background-color: var(--Primary);
+      color: var(--Secondary)
+   }
+   .caption {
+      color: var(--Primary);
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.30);
+      border-bottom: 1px solid black;
+   }
+   .active {
+      background-color: var(--Primary);
+   }
+   .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+   }
+   @-webkit-keyframes fade {
+      from {
+         opacity: .4
+      }
+      to {
+         opacity: 1
+      }
+   }
+   @keyframes fade {
+      from {
+         opacity: .4
+      }
+      to {
+         opacity: 1
+      }
+   }
+   /* MAIN */
+   main {
+      border-right: solid 1px black;
+   }
    /* MAIN INDEX */
    #main-index {
       flex-direction: row;
-      border-right: solid 1px black;
    }
    #main-index section {
       width: 70%;
       height: auto;
    }
-
    /* MAIN ASIDE */
-
    #main-index aside {
       width: 30%;
       height: auto;
       border-left: solid 1px black;
       border-bottom: 0;
    }
-   
-   .aside_content{
-      border: unset;
+   .aside-container hr {
+      display: none;
    }
-   .p_stop{
-      width: 100% ;
-      align-content: center;
-   }
-   
-   .title_actu, .title_rdv{
+   .aside-title {
       flex-direction: row;
       justify-content: center;
       justify-items: center;
@@ -419,22 +496,19 @@ footer img {
       margin: 10 auto;
       background: var(--Secondary);
    }
-
-   .p_act, .p_rdv{
-      margin-bottom: 5vh;
-      text-align: justify;
+   .aside_content {
+      border: unset;
    }
-
-   .a_actu, .a_rdv{
+   .actu-content, .rdv-content {
+      margin-bottom: 5vh;
+   }
+   .aside_content a {
       margin: auto;
    }
-   hr{
-      display: none;
+   .no-mobile {
+      display: block;
    }
    /* MAIN PRESENTATION */
-   #main-presentation {
-      border-right: 1px solid black;
-   }
    #main-presentation article {
       display: flex;
       align-items: center;
@@ -453,41 +527,47 @@ footer img {
       font-size: 1.3em;
    }
    /* MAIN CONTACT */
-   section {
+   #main-contact section {
       display: flex;
       flex-direction: row;
       height: 300px;
    }
-   section div{
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   align-content: center;
-}
-section div h1{
-   margin-top: 70px;
-}
-section div h1 p{
-   margin-top: 20px;
-}
-form input, form textarea, select {
-   display: flex;
-   flex-direction: column;
-   align-content: stretch;
-   align-items: center;
-   margin: 25px auto;
-   width: 70%;
-   height: 10%;
-}
-.contactbas{
-   margin-top: 55px;
-}
-form{
-   height: 200px;
-}
-
-
+   /* #main-contact section div {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      inutile
+   } */
+   #main-contact section div h2 {
+      margin-top: 50px;
+   }
+   /* #main-contact section div h2 p {
+      margin-top: 20px;
+   } inutile */
+   input, textarea, select {
+      display: flex;
+      flex-direction: column;
+      /* align-content: stretch; */
+      /* align-items: center; */
+      margin: 25px auto;
+      width: 70%;
+      height: 20px;
+      /* Pareil que pour le mobile */
+   }
+   textarea {
+      height: 60px;
+   }
+   iframe {
+      border-left: 1px solid black;
+   }
+   /* .contactbas {
+      margin-top: 55px;
+   } inutile */
+   /* form {
+      height: 200px;
+   } inutile */
    /* FOOTER */
    footer {
       border-right: 1px solid black;
@@ -503,13 +583,13 @@ form{
       padding-top: 15px;
       padding-bottom: 10px;
    }
-   .footer-gauche, .footer-milieu, .footer-droite {
+   .footer-left, .footer-middle, .footer-right {
       flex-direction: row;
       align-items: center;
       justify-content: space-evenly;
       height: 30px;
    }
-   .footer-milieu {
+   .footer-middle {
       width: 330px;
    }
    footer img {
@@ -536,5 +616,14 @@ form{
       display: flex;
       flex-direction: row;
       padding: 0px;
+   }
+}
+
+@media only screen and (min-width:1250px) {
+   #logo {
+      display: block;
+      position: fixed;
+      top: 20px;
+      right: 20px;
    }
 }
