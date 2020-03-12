@@ -112,6 +112,61 @@ br {
    font-size: 12px;
 }
 
+.grid-container {
+   display: grid;
+   grid-template-columns: 300px;
+   grid-template-rows: 300px 300px 300px 300px 300px 300px;
+   grid-template-areas: "article1" "article2" "article3" "article4" "article5" "article6";
+   justify-content: center;
+}
+
+.article1 {
+   grid-area: article1;
+}
+
+.article2 {
+   grid-area: article2;
+}
+
+.article3 {
+   grid-area: article3;
+}
+
+.article4 {
+   grid-area: article4;
+}
+
+.article5 {
+   grid-area: article5;
+}
+
+.article6 {
+   grid-area: article6;
+}
+
+.grid-style {
+   background-color: white;
+   margin: 20px;
+   border-radius: 10px;
+}
+
+#main-index section h3 {
+   font-size: 1.4em;
+   padding-top: 5px;
+   padding-bottom: 10px;
+   text-align: center;
+}
+
+#main-index section img {
+   width: 100%;
+   height: 200px;
+   padding-bottom: 5px;
+}
+
+#main-index section p {
+   padding-left: 5px;
+}
+
 /* ASIDE */
 
 #main-index aside {
@@ -192,9 +247,17 @@ br {
    padding: 20px;
 }
 
-#main-presentation p {
-   padding: 0 20px;
+#main-presentation p, ol {
+   padding: 20px 20px;
    text-align: left;
+}
+
+ol {
+   list-style-type: initial;
+}
+
+ol li {
+   padding-bottom: 5px;
 }
 
 #main-presentation hr {
@@ -263,7 +326,6 @@ br {
    text-align: center;
    margin-top: 30px;
    font-size: 1.6em;
-   /* Erreur de frappe 2, 5em */
 }
 
 /* .contact-bottom {
@@ -283,9 +345,7 @@ input, textarea, select {
    flex-direction: column;
    margin: 5px auto;
    width: 90%;
-   /*  Agrandissement des champs sur portable trop petit */
    height: 20px;
-   /* il vaut mieux une hauteur fixe pour les champs */
 }
 
 textarea {
@@ -359,6 +419,16 @@ footer img {
 
 .footer-bottom {
    display: none;
+}
+
+@media only screen and (min-width:600px) {
+   /* MAIN CONTENU */
+   .grid-container {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 300px 300px 300px;
+      grid-template-areas: "article1 article2" "article3 article4" "article5 article6";
+   }
 }
 
 @media only screen and (min-width:731px) {
@@ -527,17 +597,16 @@ footer img {
       font-weight: 900;
       font-size: 1.3em;
    }
-
    /* MAIN GALLERY */
 
    .gallery article{
       font-size: inherit;
    }
-   .gal_img{
+   
+   .gal_img {
       height: 68px;
    }
-
-   .gimpF{
+   .gimpF {
       margin-left: auto;
       margin-right: auto;
       margin-top: 10px;
@@ -545,40 +614,25 @@ footer img {
       width: 71vw;
       /* justify-items: baseline; */
    }
-   .gallery{
+   .gallery {
       flex-direction: row;
       justify-content: center;
    }
-
    /* MAIN CONTACT */
    #main-contact section {
       display: flex;
       flex-direction: row;
       height: 300px;
    }
-   /* #main-contact section div {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      align-content: center;
-      inutile
-   } */
    #main-contact section div h2 {
       margin-top: 50px;
    }
-   /* #main-contact section div h2 p {
-      margin-top: 20px;
-   } inutile */
    input, textarea, select {
       display: flex;
       flex-direction: column;
-      /* align-content: stretch; */
-      /* align-items: center; */
       margin: 25px auto;
       width: 70%;
       height: 20px;
-      /* Pareil que pour le mobile */
    }
    textarea {
       height: 60px;
@@ -586,12 +640,6 @@ footer img {
    iframe {
       border-left: 1px solid black;
    }
-   /* .contactbas {
-      margin-top: 55px;
-   } inutile */
-   /* form {
-      height: 200px;
-   } inutile */
    /* FOOTER */
    footer {
       border-right: 1px solid black;
@@ -649,5 +697,9 @@ footer img {
       position: fixed;
       top: 20px;
       right: 20px;
+   }
+   #logo img {
+      width: 60px;
+      height: 100%;
    }
 }
