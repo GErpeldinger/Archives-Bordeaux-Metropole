@@ -231,6 +231,8 @@ aside div hr{
 .gallery h3{
    font-size: initial;
    margin-bottom: 10px;
+   margin-left: auto;
+   margin-right: auto;
 }
 .gimpF{
    /* margin-top: -20vh; */
