@@ -210,7 +210,7 @@ br {
    display: flex;
    align-content: space-around;
    justify-content: center;
-   width: 100%;
+   width: 75%;
    flex-wrap: wrap;
    padding-top: 10vh;
    height: 70vh;
@@ -254,7 +254,7 @@ br {
 #main-contact section div {
    width: 100%;
    height: 300px;
-   /* border: black 1px solid; Les bordures posaient problème car surperposition de plusieurs ajout de border bottom */
+   /* border: black 1px solid; Les bordures posaient problÃ¨me car surperposition de plusieurs ajout de border bottom */
    border-bottom: 1px solid black;
 }
 
@@ -268,7 +268,7 @@ br {
 /* .contact-bottom {
    text-align: center;
    margin-top: 30px;
-   inutile déjà fais juste au dessus
+   inutile dÃ©jÃ  fais juste au dessus
 } */
 
 #main-contact section div p {
@@ -293,7 +293,7 @@ textarea {
 
 .send {
    width: 55px;
-   /* Agrandis de 10px car envoyé ne rentrais pas en entier */
+   /* Agrandis de 10px car envoyÃ© ne rentrais pas en entier */
 }
 
 iframe {
@@ -526,6 +526,25 @@ footer img {
       font-weight: 900;
       font-size: 1.3em;
    }
+
+   /* MAIN GALLERY */
+   .gal_img{
+      height: 68px;
+   }
+
+   .gimpF{
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+      height: auto;
+      width: 55vw;
+      /* justify-items: baseline; */
+   }
+   .gallery{
+      flex-direction: row;
+      justify-content: center;
+   }
+
    /* MAIN CONTACT */
    #main-contact section {
       display: flex;
